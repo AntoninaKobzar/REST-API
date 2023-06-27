@@ -51,8 +51,8 @@
 
 // module.exports = {
 //   listContacts,
-//     getContactById,
-//     removeContact,
-//     addContact,
-//     updateContact,
+//   getContactById,
+//   removeContact,
+//   addContact,
+//   updateContact,
 // };
