@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { User } = require("../models/user");
+const { SECRET_KEY } = process.env;
 const { HttpError, ctrlWrapper } = require("../helpers");
 
 const register = async (req, res) => {
@@ -29,9 +30,9 @@ const login = async (req, res) => {
     throw HttpError(401, "Email or passwors invalid");
   }
   const payload = {
-    id: "64a15f27bbc3d22cd385a05c",
+    id: user._id,
   };
-  const token = "fdshffsdgh.e4rq2tas.dr13541";
+  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "23h" });
   res.json({
     token,
   });
